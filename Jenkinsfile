@@ -24,16 +24,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh './jenkins/scripts/deliver.sh'
-                sleep time: 1, unit: 'MINUTES'
-            }
-            post {
-                always {
-                    timeout(time: 1, unit: 'MINUTES') {
-                        scripts {
-                            currentBuild.result = 'SUCCESS'
-                        }
-                    }
-                }
+                sleep 60
             }
         }
     }
