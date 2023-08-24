@@ -25,6 +25,7 @@ pipeline {
             steps {
                 input message: 'Lanjutkan ke tahap Deploy? (Klik "Proceed" untuk lanjut)'
             }
+        }
         stage('Deploy') {
             steps {
                 sh './jenkins/scripts/deploy.sh'
